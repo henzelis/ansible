@@ -1,0 +1,15 @@
+---
+
+- name: Check default config
+  hosts: 192.168.106.216
+
+  tasks:
+
+    - name: Config interface
+      ios_config:
+        parents:
+          - interface Ethernet0/2
+        commands:
+          - ip address 192.1.230.1 255.255.255.0
+        after: 
+          - no shutdown

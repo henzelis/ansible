@@ -1,0 +1,15 @@
+---
+
+- name: CLI config
+  hosts: all
+
+  tasks:
+
+    - name: Get interface info
+      cli_config:
+        config: "{{ ntp_config }}"
+      register: command_output
+
+    - name: Debug registered var
+      debug:
+        var: command_output

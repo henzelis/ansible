@@ -1,0 +1,15 @@
+---
+
+- name: Check default config
+  hosts: 192.168.106.216
+
+  tasks:
+
+    - name: Config interface
+      ios_config:
+        parents:
+          - interface Ethernet0/1
+        commands:
+          - ip add 190.16.200.1 255.255.255.0
+          - ip mtu 1500
+        defaults: yes

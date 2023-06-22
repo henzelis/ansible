@@ -1,0 +1,15 @@
+---
+
+- name: Config IOS
+  hosts: isp_routers
+
+  tasks:
+
+    - name: Config IOS Routers
+      ios_config:
+        lines:
+          - service password-encryption
+          - ip http server
+          - ip http secure-server
+          - no ip domain lookup
+

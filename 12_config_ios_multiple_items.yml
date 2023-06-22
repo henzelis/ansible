@@ -1,0 +1,16 @@
+---
+
+- name: Configure Multiple Items
+  hosts: isp_routers
+
+  tasks:
+
+    - name: Configure multiple interfaces
+      ios_config:
+        lines:
+          - ip mtu 1440
+        parents: interface Ethernet0/{{item}}
+      with_items:
+        - 1
+        - 2
+        - 3

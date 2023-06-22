@@ -1,0 +1,16 @@
+---
+
+- name: Run cfg commands on routers
+  hosts: isp_routers
+
+  tasks:
+
+    - name: Config line vty
+      ios_config:
+        parents:
+          - line vty 0 4
+        commands:
+          - login local
+          - transport input ssh
+          - exec-timeout 120
+

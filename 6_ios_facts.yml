@@ -1,0 +1,13 @@
+---
+
+- name: Gether IOS Facts
+  hosts: isp_routers
+  
+  tasks:
+
+    - name: Gather Facts from IOS devices
+      ios_facts:
+        gather_subset: all
+
+    - name: Debug result
+      debug: var=ansible_net_interfaces

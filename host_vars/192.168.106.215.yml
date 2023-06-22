@@ -1,0 +1,8 @@
+---
+
+hostname: ISP_2
+mgmnt_loopback: 100
+mgmnt_ip: 10.0.0.2
+ospf_ints:
+  - 192.168.106.215
+  - 10.0.0.2

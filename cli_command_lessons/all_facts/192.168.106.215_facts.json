@@ -1,0 +1,132 @@
+{
+    "net_all_ipv4_addresses": [
+        "192.168.106.215"
+    ],
+    "net_all_ipv6_addresses": [],
+    "net_api": "cliconf",
+    "net_gather_network_resources": [],
+    "net_gather_subset": [
+        "interfaces",
+        "default"
+    ],
+    "net_hostname": "ISP2",
+    "net_image": "unix:/opt/unetlab/addons/iol/bin/i86bi_LinuxL3-AdvEnterpriseK9-M2_15",
+    "net_interfaces": {
+        "Ethernet0/0": {
+            "bandwidth": 10000,
+            "description": null,
+            "duplex": null,
+            "ipv4": [],
+            "lineprotocol": "down",
+            "macaddress": "aabb.cc00.6000",
+            "mediatype": "unknown media type",
+            "mtu": 1500,
+            "operstatus": "administratively down",
+            "type": "AmdP2"
+        },
+        "Ethernet0/1": {
+            "bandwidth": 10000,
+            "description": null,
+            "duplex": null,
+            "ipv4": [],
+            "lineprotocol": "down",
+            "macaddress": "aabb.cc00.6010",
+            "mediatype": "unknown media type",
+            "mtu": 1500,
+            "operstatus": "administratively down",
+            "type": "AmdP2"
+        },
+        "Ethernet0/2": {
+            "bandwidth": 10000,
+            "description": null,
+            "duplex": null,
+            "ipv4": [],
+            "lineprotocol": "down",
+            "macaddress": "aabb.cc00.6020",
+            "mediatype": "unknown media type",
+            "mtu": 1500,
+            "operstatus": "administratively down",
+            "type": "AmdP2"
+        },
+        "Ethernet0/3": {
+            "bandwidth": 10000,
+            "description": null,
+            "duplex": null,
+            "ipv4": [],
+            "lineprotocol": "down",
+            "macaddress": "aabb.cc00.6030",
+            "mediatype": "unknown media type",
+            "mtu": 1500,
+            "operstatus": "administratively down",
+            "type": "AmdP2"
+        },
+        "Ethernet1/0": {
+            "bandwidth": 10000,
+            "description": null,
+            "duplex": null,
+            "ipv4": [],
+            "lineprotocol": "down",
+            "macaddress": "aabb.cc00.6001",
+            "mediatype": "unknown media type",
+            "mtu": 1500,
+            "operstatus": "administratively down",
+            "type": "AmdP2"
+        },
+        "Ethernet1/1": {
+            "bandwidth": 10000,
+            "description": null,
+            "duplex": null,
+            "ipv4": [],
+            "lineprotocol": "down",
+            "macaddress": "aabb.cc00.6011",
+            "mediatype": "unknown media type",
+            "mtu": 1500,
+            "operstatus": "administratively down",
+            "type": "AmdP2"
+        },
+        "Ethernet1/2": {
+            "bandwidth": 10000,
+            "description": null,
+            "duplex": null,
+            "ipv4": [],
+            "lineprotocol": "down",
+            "macaddress": "aabb.cc00.6021",
+            "mediatype": "unknown media type",
+            "mtu": 1500,
+            "operstatus": "administratively down",
+            "type": "AmdP2"
+        },
+        "Ethernet1/3": {
+            "bandwidth": 10000,
+            "description": null,
+            "duplex": null,
+            "ipv4": [
+                {
+                    "address": "192.168.106.215",
+                    "subnet": "24"
+                }
+            ],
+            "lineprotocol": "up",
+            "macaddress": "aabb.cc00.6031",
+            "mediatype": "unknown media type",
+            "mtu": 1500,
+            "operstatus": "up",
+            "type": "AmdP2"
+        }
+    },
+    "net_iostype": "IOS",
+    "net_neighbors": {
+        "Ethernet1/3": [
+            {
+                "host": "ISP1.telesphera.net",
+                "platform": "Linux Unix",
+                "port": "Ethernet1/3"
+            }
+        ]
+    },
+    "net_python_version": "3.10.6",
+    "net_serialnum": "67108960",
+    "net_system": "ios",
+    "net_version": "15.7(3)M2",
+    "network_resources": {}
+}

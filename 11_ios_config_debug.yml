@@ -1,0 +1,22 @@
+---
+
+- name: Run cfg commands on routers
+  hosts: isp_routers
+
+  tasks:
+
+    - name: Config line vty
+      ios_config:
+        parents:
+          - line vty 0 4
+        commands:
+          - login local
+          - transport input telnet ssh
+          - exec-timeout 110 0
+      register: cfg
+
+
+    - name: show config updates
+      debug: var=cfg.updates
+      when: cfg.changed
+

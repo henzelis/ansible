@@ -1,0 +1,15 @@
+{
+    "net_api": "cliconf",
+    "net_gather_network_resources": [],
+    "net_gather_subset": [
+        "default"
+    ],
+    "net_hostname": "ISP1",
+    "net_image": "unix:/opt/unetlab/addons/iol/bin/i86bi_LinuxL3-AdvEnterpriseK9-M2_15",
+    "net_iostype": "IOS",
+    "net_python_version": "3.10.6",
+    "net_serialnum": "67108944",
+    "net_system": "ios",
+    "net_version": "15.7(3)M2",
+    "network_resources": {}
+}

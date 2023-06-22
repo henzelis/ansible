@@ -1,0 +1,14 @@
+---
+
+- name: Configure QoS 
+  hosts: isp_routers
+
+  tasks:
+
+    - name: Configure QoS Policy
+      ios_config:
+        parents:
+          - policy-map OUT_QOS
+          - class class-default
+        lines:
+          - shape average 100000 100000

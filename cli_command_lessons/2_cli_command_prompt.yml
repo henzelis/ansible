@@ -1,0 +1,20 @@
+---
+
+- name: Clear counters with prompt
+  hosts: isp1
+
+  tasks:
+
+    - name: Clear interface counters
+      cli_command:
+        command: clear counters Ethernet0/3
+        prompt: 'Clear "show interface" counters on this interface'
+        answer: y
+
+    
+    - name: Clear interface counters in loop
+      cli_command:
+        command: clear counters {{item}}
+        prompt: 'Clear "show interface" counters on this interface'
+        answer: y
+      loop: [e0/0, e0/1, e0/2]

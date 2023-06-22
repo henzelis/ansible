@@ -1,0 +1,20 @@
+---
+
+- name: Run cfg with BEFORE
+  hosts: 192.168.106.216
+
+  tasks:
+
+    - name: Config ACL with BEFORE
+      ios_config:
+        before:
+          - no ip access-list extended IN_to_OUT
+        parents:
+          - ip access-list extended IN_to_OUT
+        commands:
+          - permit tcp 10.0.1.0 0.0.0.255 any eq www
+          - permit tcp 10.0.1.0 0.0.0.255 any eq 22
+          - permit icmp any any
+        replace: block
+        match: exact
+        save_when: modified

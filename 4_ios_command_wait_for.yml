@@ -1,0 +1,14 @@
+---
+
+- name: Ping hosts
+  hosts: isp_routers
+
+  tasks:
+
+    - name: run show commands
+      ios_command:
+        commands: ping 192.168.106.212 timeout 1
+        wait_for:
+          - result[0] contains 'Success rate is 100 percent'
+        retries: 1
+        interval: 12

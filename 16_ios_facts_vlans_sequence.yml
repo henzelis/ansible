@@ -1,0 +1,22 @@
+---
+
+- name: Configure VLANS
+  hosts: switches
+
+  tasks:
+
+    - name: configure vlans
+      ios_vlans:
+        config:
+          - name: Ansible{{item}}
+            vlan_id: "{{item}}"
+        state: deleted
+      with_sequence: 10-20
+
+    - name: Facts
+      ios_facts:
+        gather_network_resources:
+          - vlans
+
+    - name: Show ansible network resources
+      debug: var=ansible_network_resources

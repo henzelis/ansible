@@ -1,0 +1,13 @@
+---
+
+- name: Configure OSPF with Jinja template
+  hosts: isp_routers
+
+  tasks:
+    - name: Gethering Facts
+      ios_facts:
+        gather_subset: interfaces
+
+    - name: Configure OSPF with template
+      ios_config:
+        src: templates/ospf_2.j2

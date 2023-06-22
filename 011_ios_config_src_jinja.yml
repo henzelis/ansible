@@ -1,0 +1,10 @@
+---
+
+- name: Configure OSPF with Jinja template
+  hosts: isp_routers
+
+  tasks:
+
+    - name: Configure OSPF with tempalte
+      ios_config:
+        src: templates/ospf.j2
