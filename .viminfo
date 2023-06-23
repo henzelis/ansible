@@ -11,13 +11,20 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0~/\<register\>
+~MSle0~/\<register\>
+
+# Last Substitute String:
+$
 
 # Command Line History (newest to oldest):
-:q
-|2,0,1687359073,,"q"
 :wq
-|2,0,1687358994,,"wq"
+|2,0,1687505558,,"wq"
+:q
+|2,0,1687505473,,"q"
+:Q
+|2,0,1687420258,,"Q"
+:'<,'> Test vault pass
+|2,0,1687415816,,"'<,'> Test vault pass"
 :w
 |2,0,1687358256,,"w"
 :q!
@@ -28,6 +35,8 @@
 |2,0,1687180648,,"WQ"
 
 # Search String History (newest to oldest):
+? @$
+|2,1,1687505471,,"@$"
 ?/vault_ansible_password
 |2,1,1687359070,47,"vault_ansible_password"
 ? \<register\>
@@ -41,19 +50,22 @@
 
 # Registers:
 ""0	LINE	0
-	    - name: Clear interface counters
-	      cli_command:
-	        command: clear counters Ethernet0/3
-	        prompt: 'Clear "show interface" counters on this interface'
-	        answer: y
-|3,1,0,1,5,0,1687351894,"    - name: Clear interface counters","      cli_command:","        command: clear counters Ethernet0/3","        prompt: 'Clear \"show interface\" counters on this interface'","        answer: y"
+	        "ipv4": [
+	            {
+	                "address": "190.16.200.1 255.255.255.0"
+	            }
+	        ],
+|3,1,0,1,5,0,1687505471,"        \"ipv4\": [","            {","                \"address\": \"190.16.200.1 255.255.255.0\"","            }","        ],"
 "1	LINE	0
-	192.168.106.217
-|3,0,1,1,1,0,1687349178,"192.168.106.217"
+	vault_ansible_password = lightzone
+|3,0,1,1,1,0,1687415089,"vault_ansible_password = lightzone"
 "2	LINE	0
-	        gather_subset: min
-|3,0,2,1,1,0,1687346150,"        gather_subset: min"
+	192.168.106.217
+|3,0,2,1,1,0,1687349178,"192.168.106.217"
 "3	LINE	0
+	        gather_subset: min
+|3,0,3,1,1,0,1687346150,"        gather_subset: min"
+"4	LINE	0
 	    {
 	        "name": "Ethernet0/3"
 	    },
@@ -66,267 +78,427 @@
 	    {
 	        "name": "Ethernet1/2"
 	    },
-|3,0,3,1,12,0,1687338904,"    {","        \"name\": \"Ethernet0/3\"","    },","    {","        \"name\": \"Ethernet1/0\"","    },","    {","        \"name\": \"Ethernet1/1\"","    },","    {","        \"name\": \"Ethernet1/2\"","    },"
-"4	LINE	0
+|3,0,4,1,12,0,1687338904,"    {","        \"name\": \"Ethernet0/3\"","    },","    {","        \"name\": \"Ethernet1/0\"","    },","    {","        \"name\": \"Ethernet1/1\"","    },","    {","        \"name\": \"Ethernet1/2\"","    },"
+"5	LINE	0
 	    {
 	        "name": "Loopback10"
 	    },
-|3,0,4,1,3,0,1687338869,"    {","        \"name\": \"Loopback10\"","    },"
-"5	LINE	0
+|3,0,5,1,3,0,1687338869,"    {","        \"name\": \"Loopback10\"","    },"
+"6	LINE	0
 	    - name: Show ansible_network_resources
 	      debug: var=ansible_network_resources
-|3,0,5,1,2,0,1687338538,"    - name: Show ansible_network_resources","      debug: var=ansible_network_resources"
-"6	LINE	0
-	          - interfaces
-|3,0,6,1,1,0,1687338531,"          - interfaces"
+|3,0,6,1,2,0,1687338538,"    - name: Show ansible_network_resources","      debug: var=ansible_network_resources"
 "7	LINE	0
-	          - deny ip any any log
-|3,0,7,1,1,0,1687269143,"          - deny ip any any log"
+	          - interfaces
+|3,0,7,1,1,0,1687338531,"          - interfaces"
 "8	LINE	0
-	          - ip mtu 1500
-|3,0,8,1,1,0,1687267791,"          - ip mtu 1500"
+	          - deny ip any any log
+|3,0,8,1,1,0,1687269143,"          - deny ip any any log"
 "9	LINE	0
-	        - 3
-|3,0,9,1,1,0,1687266450,"        - 3"
+	          - ip mtu 1500
+|3,0,9,1,1,0,1687267791,"          - ip mtu 1500"
 "-	CHAR	0
 	/1
 |3,0,36,0,1,0,1687265485,"/1"
 
 # File marks:
-'0  1  0  ~/.ansible/tmp/ansible-local-1664kpa1sbgw/tmpzwoetzg1.yml
-|4,48,1,0,1687359073,"~/.ansible/tmp/ansible-local-1664kpa1sbgw/tmpzwoetzg1.yml"
-'1  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,49,5,23,1687359044,"~/cli_command_lessons/group_vars/all.yml"
-'2  5  5  ~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml
-|4,50,5,5,1687358994,"~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml"
-'3  1  0  ~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml
-|4,51,1,0,1687358952,"~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml"
-'4  3  27  ~/cli_command_lessons/ansible.cfg
-|4,52,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
-'5  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,53,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
-'6  1  0  ~/cli_command_lessons/group_vars/all.
-|4,54,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
-'7  1  8  ~/cli_command_lessons/answer
-|4,55,1,8,1687358885,"~/cli_command_lessons/answer"
-'8  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,56,5,23,1687358821,"~/cli_command_lessons/group_vars/all.yml"
-'9  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,57,5,23,1687358821,"~/cli_command_lessons/group_vars/all.yml"
+'0  3  113  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,48,3,113,1687505558,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+'1  3  112  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,49,3,112,1687505517,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+'2  8  0  ~/write_to_csv/templates
+|4,50,8,0,1687505473,"~/write_to_csv/templates"
+'3  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,51,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+'4  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,52,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+'5  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,53,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+'6  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,54,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+'7  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,55,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+'8  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,56,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+'9  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,57,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
 
 # Jumplist (newest first):
--'  1  0  ~/.ansible/tmp/ansible-local-1664kpa1sbgw/tmpzwoetzg1.yml
-|4,39,1,0,1687359073,"~/.ansible/tmp/ansible-local-1664kpa1sbgw/tmpzwoetzg1.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687359044,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687359044,"~/cli_command_lessons/group_vars/all.yml"
--'  5  5  ~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml
-|4,39,5,5,1687358994,"~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml"
--'  5  5  ~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml
-|4,39,5,5,1687358994,"~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml"
--'  5  5  ~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml
-|4,39,5,5,1687358994,"~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml"
--'  5  5  ~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml
-|4,39,5,5,1687358994,"~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml"
--'  1  0  ~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml
-|4,39,1,0,1687358977,"~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml"
--'  1  0  ~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml
-|4,39,1,0,1687358977,"~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml"
--'  1  0  ~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml
-|4,39,1,0,1687358977,"~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml"
--'  1  0  ~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml
-|4,39,1,0,1687358977,"~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml"
--'  1  0  ~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml
-|4,39,1,0,1687358952,"~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml"
--'  1  0  ~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml
-|4,39,1,0,1687358952,"~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml"
--'  1  0  ~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml
-|4,39,1,0,1687358952,"~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml"
--'  1  0  ~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml
-|4,39,1,0,1687358952,"~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml"
--'  1  0  ~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml
-|4,39,1,0,1687358952,"~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml"
--'  1  0  ~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml
-|4,39,1,0,1687358952,"~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml"
--'  1  0  ~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml
-|4,39,1,0,1687358952,"~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml"
--'  1  0  ~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml
-|4,39,1,0,1687358952,"~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  3  27  ~/cli_command_lessons/ansible.cfg
-|4,39,3,27,1687358942,"~/cli_command_lessons/ansible.cfg"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  5  23  ~/cli_command_lessons/group_vars/all.yml
-|4,39,5,23,1687358911,"~/cli_command_lessons/group_vars/all.yml"
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
--'  1  0  ~/cli_command_lessons/group_vars/all.
-|4,39,1,0,1687358893,"~/cli_command_lessons/group_vars/all."
+-'  3  113  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,3,113,1687505558,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  3  112  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,3,112,1687505517,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,5,11,1687505480,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,5,11,1687505480,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  8  0  ~/write_to_csv/templates
+|4,39,8,0,1687505473,"~/write_to_csv/templates"
+-'  8  0  ~/write_to_csv/templates
+|4,39,8,0,1687505473,"~/write_to_csv/templates"
+-'  8  0  ~/write_to_csv/templates
+|4,39,8,0,1687505473,"~/write_to_csv/templates"
+-'  8  0  ~/write_to_csv/templates
+|4,39,8,0,1687505473,"~/write_to_csv/templates"
+-'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
+-'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
+|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
 
 # History of marks within files (newest to oldest):
 
-> ~/.ansible/tmp/ansible-local-1664kpa1sbgw/tmpzwoetzg1.yml
-	*	1687359070	0
+> ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
+	*	1687505556	0
+	"	3	113
+	^	3	114
+	.	3	113
+	+	5	11
+	+	3	113
+
+> ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
+	*	1687505386	0
+	"	17	38
+	^	17	39
+	.	17	38
+	+	27	63
+	+	28	20
+	+	15	43
+	+	27	43
+	+	20	0
+	+	17	38
+
+> ~/write_to_csv/2_collect_data_write_to_csv.yml
+	*	1687505005	0
+	"	38	20
+	^	38	21
+	.	37	34
+	+	1	2
+	+	38	20
+	+	28	34
+	+	37	34
+
+> ~/write_to_csv/templates/sh_ip_int_br_ios_command.j2
+	*	1687504223	0
+	"	2	12
+	^	2	13
+	.	2	12
+	+	2	12
+
+> ~/write_to_csv/tempates/sh_ip_int_br_ios_command.jw
+	*	1687504021	0
+	"	3	11
+	^	3	12
+	.	3	11
+	+	3	11
+
+> ~/configure_vpn/templates/no_shut.j2
+	*	1687438232	0
+	"	4	0
+	^	4	0
+	.	3	12
+	+	1	40
+	+	2	0
+	+	1	16
+	+	3	12
+
+> ~/configure_vpn/2_collect_data_write_to_csv.yml
+	*	1687437939	0
+	"	19	74
+	^	19	75
+	.	19	74
+	+	23	26
+	+	19	74
+
+> ~/configure_vpn/templates/ios_vpn2.j2
+	*	1687437491	0
+	"	1	40
+	^	1	41
+	.	1	40
+	+	15	42
+	+	24	22
+	+	25	25
+	+	26	30
+	+	1	43
+	+	6	16
+	+	1	40
+
+> ~/configure_vpn/templates/ios_vpn1.j2
+	*	1687437482	0
+	"	1	40
+	^	1	41
+	.	1	40
+	+	3	0
+	+	2	19
+	+	15	46
+	+	27	35
+	+	1	58
+	+	6	16
+	+	1	40
+
+> ~/configure_vpn/templates/ios_vpn1
+	*	1687437367	0
 	"	1	0
 
+> ~/configure_vpn/1_configure_vpn.yml
+	*	1687437211	0
+	"	30	33
+	^	38	54
+	.	38	53
+	+	24	24
+	+	26	24
+	+	20	14
+	+	39	0
+	+	28	43
+	+	38	53
+
+> ~/15_ios_l3_intf_del_ip_adds.yml
+	*	1687420258	0
+	"	14	20
+	^	14	21
+	.	14	20
+	+	14	18
+	+	18	29
+	+	14	20
+	+	18	31
+	+	14	20
+
+> ~/192.168.106.216_l3_intf.json
+	*	1687419811	0
+	"	29	37
+	^	29	38
+	.	29	38
+	+	2	26
+	+	10	38
+	+	13	26
+	+	18	38
+	+	10	54
+	+	18	54
+	+	23	0
+	+	2	0
+	+	13	26
+	+	21	26
+	+	23	0
+	+	34	26
+	+	26	54
+	+	9	0
+	+	8	0
+	+	3	0
+	+	5	37
+	+	26	5
+	+	27	0
+	+	29	38
+
+> ~/cli_command_lessons/ansible.cfg
+	*	1687416627	0
+	"	3	21
+	^	3	22
+	.	3	22
+	+	3	22
+
+> ~/cli_command_lessons/test_vault.yml
+	*	1687416212	0
+	"	4	17
+	^	4	18
+	.	4	17
+	+	1	0
+	+	2	14
+	+	2	24
+	+	2	0
+	+	9	88
+	+	4	17
+
+> ~/cli_command_lessons/.vault_pass
+	*	1687415653	0
+	"	1	8
+	^	1	9
+	.	1	8
+	+	1	8
+
 > ~/cli_command_lessons/group_vars/all.yml
-	*	1687359026	0
-	"	5	23
-	^	10	44
-	.	10	43
+	*	1687415337	0
+	"	10	29
+	^	10	30
+	.	10	29
 	+	12	12
 	+	5	33
 	+	6	43
@@ -336,6 +508,22 @@
 	+	6	45
 	+	7	51
 	+	10	43
+	+	6	21
+	+	5	17
+	+	7	28
+	+	10	24
+	+	5	22
+	+	6	26
+	+	7	33
+	+	10	29
+
+> ~/cli_command_lessons/group_vars/all.
+	*	1687415313	0
+	"	1	0
+
+> ~/.ansible/tmp/ansible-local-1664kpa1sbgw/tmpzwoetzg1.yml
+	*	1687359070	0
+	"	1	0
 
 > ~/.ansible/tmp/ansible-local-1614wat8n7gx/tmpha86h6w5.yml
 	*	1687358993	0
@@ -349,17 +537,6 @@
 
 > ~/.ansible/tmp/ansible-local-1599489bwvtv/tmpoub80vwi.yml
 	*	1687358949	0
-	"	1	0
-
-> ~/cli_command_lessons/ansible.cfg
-	*	1687358941	0
-	"	3	27
-	^	3	28
-	.	3	27
-	+	3	27
-
-> ~/cli_command_lessons/group_vars/all.
-	*	1687358891	0
 	"	1	0
 
 > ~/cli_command_lessons/answer
@@ -543,17 +720,6 @@
 	.	4	14
 	+	4	14
 
-> ~/15_ios_l3_intf_del_ip_adds.yml
-	*	1687340431	0
-	"	14	20
-	^	14	21
-	.	14	20
-	+	14	18
-	+	18	29
-	+	14	20
-	+	18	31
-	+	14	20
-
 > ~/15_ios_l3_interfaces.yml
 	*	1687340270	0
 	"	1	0
@@ -564,25 +730,6 @@
 	+	18	22
 	+	7	29
 	+	14	21
-
-> ~/192.168.106.216_l3_intf.json
-	*	1687338932	0
-	"	1	0
-	^	21	55
-	.	21	54
-	+	2	26
-	+	5	38
-	+	8	26
-	+	13	38
-	+	5	54
-	+	13	54
-	+	18	0
-	+	2	0
-	+	8	26
-	+	16	26
-	+	18	0
-	+	24	26
-	+	21	54
 
 > ~/14_ios_l3_interfaces.yml
 	*	1687338695	0

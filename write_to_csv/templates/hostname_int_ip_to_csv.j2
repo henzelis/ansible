@@ -1,0 +1,5 @@
+{% for interface, params in ansible_net_interfaces.items() %}
+{% if params.ipv4 %}
+"{{ inventory_hostname }}", "{{ interface }}", "{{ params.ipv4[0]["address"] }}", "{{ params.ipv4[0]["subnet"] }}"
+{% endif %}
+{% endfor %}

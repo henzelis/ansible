@@ -616,3 +616,303 @@ ansible-playbook 1_cli_command.yml
 ls
 shutdown now
 sudo shutdown now
+df -h
+git status
+git init -b main
+git config --global user.name "henzelis"
+git auth login
+gh auth login
+git config --global user.email "henzelis@gmail.com"
+git config --list
+git init
+git status
+git add .
+git commit -m "ansible add"
+git push origin master
+git push
+git push ansible
+git remote add origin https://github.com/henzelis/ansible.git
+git branch -M main
+git push -u origin main
+https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls
+git status
+git branch -M main
+https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls
+git commit
+
+ls
+git remote set-url origin https://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@github.com/henzelis/ansible.git
+git push
+git push origin main
+git status
+ls
+cd cli_command_lessons/
+ls
+ansible-vault --list vault 
+cat ansible.cfg 
+history | grep ansible-vault
+ansible-vault view vault 
+ansible-playbook 1_cli_command.yml -vvvv
+cd cli_command_lessons/
+ls
+ansible-playbook 1_cli_command.yml -vvvv
+vi ansible.cfg 
+ansible-playbook 1_cli_command.yml -vvvv
+vi ansible.cfg 
+cat group_vars/all.yml 
+vi group_vars/all.yml 
+ansible-playbook 1_cli_command.yml -vvvv
+ansible-playbook 1_cli_command.yml -v
+vi group_vars/all.
+vi group_vars/all.yml 
+ansible-playbook --vault-password-file vault 1_cli_command.yml 
+del answer 
+rm answer 
+git status
+git commit -m "no answer"
+git status
+git push
+git push origin master
+git push --set-upstream origin main
+git status
+git rm answer
+git status
+git push origin master
+git push
+git status
+git commit -m "no answer )"
+git push
+touch ~/.vault_pass
+mv ~/.vault_pass .
+ls
+vi .vault_pass 
+ansible-playbook --vault-password-file vault 1_cli_command.yml 
+ansible-playbook --vault-password-file .vault_pass 1_cli_command.yml 
+ansible-vault view vault 
+vault_ansible_password
+vi test_vault.yml
+ansible-playbook --vault-password-file .vault_pass test_vault.yml 
+cat .vault_pass 
+cat vault 
+mv vault vault.yml
+ansible-playbook --vault-password-file .vault_pass test_vault.yml 
+ansible-vault view vault.yml 
+cat test_vault.yml 
+cat vault.yml 
+ansible-playbook --vault-password-file .vault_pass test_vault.yml 
+vi test_vault.yml 
+ansible-playbook --vault-password-file .vault_pass test_vault.yml 
+vi test_vault.yml 
+ansible-playbook --vault-password-file .vault_pass test_vault.yml 
+echo '.vault_pass' >> .gitignore
+cat .vault_pass 
+vi ansible.cfg 
+cat .vault_pass 
+cat ansible.cfg 
+ca group_vars/
+ls
+cd group_vars/
+ls
+mv ../vault.yml .
+ls
+cd ..
+ansible-playbook test_vault.yml 
+ansible-playbook 1_cli_command.yml 
+cd group_vars/
+cat all.yml 
+mkdir all
+mv all.yml all/vars
+ls
+mv vault.yml all/vault
+end
+cd ..
+ansible-playbook 1_cli_command.yml 
+cd group_vars/
+ls
+rm -rf all.bkp.yml 
+cd ..
+git status
+git commit -m "vault added"
+git push
+git status
+git add group_vars/all
+ls
+rm -rf test_vault.yml 
+git status
+git add .
+git commit -m 'vault added'
+git push
+cat ansible.cfg 
+cat .gitignore 
+ls
+cd group_vars/
+ls
+mkdir cisco_routers
+mv cisco_routers.yml cisco_routers/vars
+mkdir cisco_switches
+mv cisco_switches.yml cisco_switches/vars
+cd ..
+ansible-playbook 1_cli_command.yml 
+ls
+cat 3_cli_config.yml 
+cat 4_ios_config_src_jinja_facts.yml 
+ansible-playbook 4_ios_config_src_jinja_facts.yml 
+cd ..
+ls
+cat 12_config_ios_multiple_items.yml 
+cat 10_ios_qos_config.yml 
+cat 11
+cat 11_ios_config_debug.yml 
+cat 13_ios_facts_network_resources.yml 
+cat 14_ios_l3_intf_to_files.yml 
+ansible-playbook 14_ios_l3_intf_to_files.yml 
+ls
+cat 14_ios_l3_intf_to_files.yml 
+cat 15_ios_l3_intf_del_ip_adds.yml 
+cat 192.168.106.216_l3_intf.json 
+ls
+cat 192.168.106.216_l3_intf.json 
+ls
+cat 13_ios_facts_network_resources.yml 
+cat 14_ios_l3_intf_to_files.yml 
+ls
+cat 15_ios_l3_intf_del_ip_adds.yml 
+vi 192.168.106.216_l3_intf.json 
+ls
+cat 15_ios_l3_intf_del_ip_adds.yml 
+ansible-vault 15_ios_l3_intf_del_ip_adds.yml 
+ansible-playbook 15_ios_l3_intf_del_ip_adds.yml 
+ls
+cat 011_ios_config_src_jinja.yml 
+cat templates/ospf.j2 
+cat 011_ios_config_src_jinja.yml 
+cat templates/ospf.j2 
+cat host_vars/192.168.106.215.yml 
+ls
+cat 012_ios_config_facts_jinja.yml 
+cat templates/ospf_2.j2 
+ansible-playbook 012_ios_config_facts_jinja.yml 
+ls
+cat 07_ios_config_after.yml 
+vi 15_ios_l3_intf_del_ip_adds.yml 
+cat 7_ios_facts.yml 
+cat 07_ios_config_after.yml 
+history | grep ansible 
+sudo su
+ls
+cat 7_ios_facts.yml 
+cat 012_ios_config_facts_jinja.yml 
+cat templates/ospf_2.j2 
+conf t
+cd templates/
+ls
+cd ..
+ls
+cat 13_ios_facts_network_resources.yml 
+ansible-playbook 13_ios_facts_network_resources.yml --limit 192.168.106.216
+ls
+cat 12_config_ios_multiple_items.yml 
+cat 11_ios_config_debug.yml 
+cat 08_ios_config_acl_before_match_save_when.yml 
+ls
+mkdir configure_vpn
+cp cli_command_lessons/ansible.cfg configure_vpn/
+cp cli_command_lessons/myhosts.ini configure_vpn/
+cp -r cli_command_lessons/host_vars/ configure_vpn/host_vars/
+cp -r cli_command_lessons/group_vars/ configure_vpn/group_vars/
+cd configure_vpn/
+ls
+cat ansible.cfg 
+cd ..
+cp cli_command_lessons/.vault_pass configure_vpn/
+cd configure_vpn/
+ls
+cat .vault_pass 
+ls
+cat myhosts.ini 
+ls group_vars/
+vi 1_configure_vpn.yml
+ansible-playbook 1_configure_vpn.yml 
+vi 1_configure_vpn.yml 
+ansible-playbook 1_configure_vpn.yml -vvvv
+vi 1_configure_vpn.yml 
+ansible-playbook 1_configure_vpn.yml -vvvv
+ansible-playbook 1_configure_vpn.yml
+mkdir templates
+vi templates/ios_vpn1.j2
+cp templates/ios_vpn1.j2 templates/ios_vpn2.j2 
+vi templates/ios_vpn2.j2 
+vi 1_configure_vpn.yml 
+ansible-playbook 1_configure_vpn.yml 
+cat templates/ios_vpn1.j2 
+vi 1_configure_vpn.yml 
+mkdir configs
+ansible-playbook 1_configure_vpn.yml 
+vi templates/ios_vpn1.j2 
+ansible-playbook 1_configure_vpn.yml 
+cd configs/
+ls
+cd ..
+ls
+cd templates/
+ls
+vi ios_vpn1.j2 
+vi ios_vpn2.j2 
+cd ..
+ansible-playbook 1_configure_vpn.yml 
+cat templates/ios_vpn2.j2 
+cat templates/ios_vpn1.j2 
+vi templates/ios_vpn2.j2 
+ansible-playbook 1_configure_vpn.yml 
+ls
+ls configs/
+vi 1_configure_vpn.yml 
+vi templates/ios_vpn1.j2 
+vi templates/ios_vpn2.j2 
+ansible-playbook 1_configure_vpn.yml 
+vi templates/ios_vpn1.j2 
+vi templates/ios_vpn2.j2 
+ansible-playbook 1_configure_vpn.yml 
+ls configs/
+cat configs/result1.txt 
+cat configs/result2.txt 
+vi 1_configure_vpn.yml 
+ls
+cat templates/ios_vpn1.j2 
+clear
+cat templates/ios_vpn2.j2 
+vi 1_configure_vpn.yml 
+ansible-playbook 1_configure_vpn.yml 
+cat configs/result1.txt 
+cat configs/result2.txt 
+cat templates/ios_vpn1.j2 
+clear
+cat templates/ios_vpn1.j2 | grep isp1
+cat templates/ios_vpn1.j2 | more
+cat templates/ios_vpn1.j2 | grep 'set tun_num'
+cat templates/ios_vpn2.j2 | grep 'set tun_num'
+vi templates/ios_vpn1
+vi templates/ios_vpn1.j2 
+ansible-playbook 1_configure_vpn.yml 
+cat configs/result1.txt 
+cat configs/result2.txt 
+cd templates/
+ls
+vi ios_vpn1.j2 
+vi ios_vpn2.j2 
+cd ..
+ansible-playbook 1_configure_vpn.yml 
+cat configs/result1.txt 
+cat configs/result2.txt 
+vi 2_collect_data_write_to_csv.yml
+ansible-playbook 2_collect_data_write_to_csv.yml 
+vi 2_collect_data_write_to_csv.yml 
+ansible-playbook 2_collect_data_write_to_csv.yml 
+vi 2_collect_data_write_to_csv.yml 
+ansible-playbook 2_collect_data_write_to_csv.yml 
+cat templates/ios_vpn1.j2 
+cd ..
+cat templates/ospf_2.j2 
+cd configure_vpn/
+vi templates/no_shut.j2
+apt list --upgradable
