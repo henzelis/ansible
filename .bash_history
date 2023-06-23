@@ -916,3 +916,6 @@ cat templates/ospf_2.j2
 cd configure_vpn/
 vi templates/no_shut.j2
 apt list --upgradable
+ls templates/
+mv write_to_csv/templates/enable_interface_with_ip.j2 templates/
+ls templates/

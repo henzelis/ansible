@@ -1,0 +1,8 @@
+{% for interface, params in ansible_net_interfaces.items() %}
+{% if params.ipv4 %}
+{% if params.operstatus == "administratively down" %} 
+interface {{ interface }}
+ no shutdown
+{% endif %}
+{% endif %}
+{% endfor %}

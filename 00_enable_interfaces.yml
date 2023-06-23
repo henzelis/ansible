@@ -1,0 +1,21 @@
+---
+
+- name: Enable interfaces with IP addresses
+  hosts: all
+
+  tasks:
+
+    - name: Collect facts
+      ios_facts:
+        gather_subset:
+          - interfaces
+
+    #- debug: var=ansible_net_interfaces
+    
+    - name: Configure Interfaces
+      ios_config:
+        src: templates/enable_interface_with_ip.j2
+      register: config
+
+    - debug: var=config
+

@@ -18,17 +18,17 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-|2,0,1687505558,,"wq"
+|2,0,1687513330,,"wq"
 :q
-|2,0,1687505473,,"q"
+|2,0,1687513299,,"q"
+:q!
+|2,0,1687512369,,"q!"
 :Q
 |2,0,1687420258,,"Q"
 :'<,'> Test vault pass
 |2,0,1687415816,,"'<,'> Test vault pass"
 :w
 |2,0,1687358256,,"w"
-:q!
-|2,0,1687265168,,"q!"
 :qa
 |2,0,1687265164,,"qa"
 :WQ
@@ -50,22 +50,27 @@ $
 
 # Registers:
 ""0	LINE	0
-	        "ipv4": [
-	            {
-	                "address": "190.16.200.1 255.255.255.0"
-	            }
-	        ],
-|3,1,0,1,5,0,1687505471,"        \"ipv4\": [","            {","                \"address\": \"190.16.200.1 255.255.255.0\"","            }","        ],"
+	{% endif %}
+|3,1,0,1,1,0,1687513328,"{% endif %}"
 "1	LINE	0
-	vault_ansible_password = lightzone
-|3,0,1,1,1,0,1687415089,"vault_ansible_password = lightzone"
+	eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+|3,0,1,1,1,0,1687512228,"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 "2	LINE	0
-	192.168.106.217
-|3,0,2,1,1,0,1687349178,"192.168.106.217"
+	  get_facts: interfaces
+|3,0,2,1,1,0,1687511005,"  get_facts: interfaces"
 "3	LINE	0
-	        gather_subset: min
-|3,0,3,1,1,0,1687346150,"        gather_subset: min"
+	"{{ inventory_hostname }}", "{{ interface }}", "{{ params.ipv4[0]["address"] }}", "{{ params.ipv4[0]["subnet"] }}"
+|3,0,3,1,1,0,1687510719,"\"{{ inventory_hostname }}\", \"{{ interface }}\", \"{{ params.ipv4[0][\"address\"] }}\", \"{{ params.ipv4[0][\"subnet\"] }}\""
 "4	LINE	0
+	vault_ansible_password = lightzone
+|3,0,4,1,1,0,1687415089,"vault_ansible_password = lightzone"
+"5	LINE	0
+	192.168.106.217
+|3,0,5,1,1,0,1687349178,"192.168.106.217"
+"6	LINE	0
+	        gather_subset: min
+|3,0,6,1,1,0,1687346150,"        gather_subset: min"
+"7	LINE	0
 	    {
 	        "name": "Ethernet0/3"
 	    },
@@ -78,254 +83,295 @@ $
 	    {
 	        "name": "Ethernet1/2"
 	    },
-|3,0,4,1,12,0,1687338904,"    {","        \"name\": \"Ethernet0/3\"","    },","    {","        \"name\": \"Ethernet1/0\"","    },","    {","        \"name\": \"Ethernet1/1\"","    },","    {","        \"name\": \"Ethernet1/2\"","    },"
-"5	LINE	0
+|3,0,7,1,12,0,1687338904,"    {","        \"name\": \"Ethernet0/3\"","    },","    {","        \"name\": \"Ethernet1/0\"","    },","    {","        \"name\": \"Ethernet1/1\"","    },","    {","        \"name\": \"Ethernet1/2\"","    },"
+"8	LINE	0
 	    {
 	        "name": "Loopback10"
 	    },
-|3,0,5,1,3,0,1687338869,"    {","        \"name\": \"Loopback10\"","    },"
-"6	LINE	0
+|3,0,8,1,3,0,1687338869,"    {","        \"name\": \"Loopback10\"","    },"
+"9	LINE	0
 	    - name: Show ansible_network_resources
 	      debug: var=ansible_network_resources
-|3,0,6,1,2,0,1687338538,"    - name: Show ansible_network_resources","      debug: var=ansible_network_resources"
-"7	LINE	0
-	          - interfaces
-|3,0,7,1,1,0,1687338531,"          - interfaces"
-"8	LINE	0
-	          - deny ip any any log
-|3,0,8,1,1,0,1687269143,"          - deny ip any any log"
-"9	LINE	0
-	          - ip mtu 1500
-|3,0,9,1,1,0,1687267791,"          - ip mtu 1500"
+|3,0,9,1,2,0,1687338538,"    - name: Show ansible_network_resources","      debug: var=ansible_network_resources"
 "-	CHAR	0
 	/1
 |3,0,36,0,1,0,1687265485,"/1"
 
 # File marks:
-'0  3  113  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,48,3,113,1687505558,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
-'1  3  112  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,49,3,112,1687505517,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
-'2  8  0  ~/write_to_csv/templates
-|4,50,8,0,1687505473,"~/write_to_csv/templates"
-'3  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,51,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
-'4  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,52,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
-'5  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,53,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
-'6  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,54,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
-'7  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,55,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
-'8  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,56,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
-'9  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,57,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+'0  7  0  ~/templates/enable_interface_with_ip.j2
+|4,48,7,0,1687513330,"~/templates/enable_interface_with_ip.j2"
+'1  8  9  ~/templates/enable_interface_with_ip.j2
+|4,49,8,9,1687513299,"~/templates/enable_interface_with_ip.j2"
+'2  7  9  ~/templates/enable_interface_with_ip.j2
+|4,50,7,9,1687513299,"~/templates/enable_interface_with_ip.j2"
+'3  3  25  ~/templates/enable_interface_with_ip.j2
+|4,51,3,25,1687513269,"~/templates/enable_interface_with_ip.j2"
+'4  3  25  ~/templates/enable_interface_with_ip.j2
+|4,52,3,25,1687513269,"~/templates/enable_interface_with_ip.j2"
+'5  3  25  ~/templates/enable_interface_with_ip.j2
+|4,53,3,25,1687513269,"~/templates/enable_interface_with_ip.j2"
+'6  3  25  ~/templates/enable_interface_with_ip.j2
+|4,54,3,25,1687513269,"~/templates/enable_interface_with_ip.j2"
+'7  20  22  ~/00_enable_interfaces.yml
+|4,55,20,22,1687513092,"~/00_enable_interfaces.yml"
+'8  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,56,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+'9  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,57,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
 
 # Jumplist (newest first):
--'  3  113  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,3,113,1687505558,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  3  112  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,3,112,1687505517,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,5,11,1687505480,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,5,11,1687505480,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  8  0  ~/write_to_csv/templates
-|4,39,8,0,1687505473,"~/write_to_csv/templates"
--'  8  0  ~/write_to_csv/templates
-|4,39,8,0,1687505473,"~/write_to_csv/templates"
--'  8  0  ~/write_to_csv/templates
-|4,39,8,0,1687505473,"~/write_to_csv/templates"
--'  8  0  ~/write_to_csv/templates
-|4,39,8,0,1687505473,"~/write_to_csv/templates"
--'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  38  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,38,1687505391,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  17  37  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,17,37,1687505345,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  19  33  ~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml
-|4,39,19,33,1687505308,"~/write_to_csv/3_collect_data_from_facts_write_to_csv.yml"
--'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  5  11  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,5,11,1687505198,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  1  0  ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
-|4,39,1,0,1687505084,"~/write_to_csv/templates/hostname_int_ip_to_csv.j2"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
--'  38  20  ~/write_to_csv/2_collect_data_write_to_csv.yml
-|4,39,38,20,1687505019,"~/write_to_csv/2_collect_data_write_to_csv.yml"
+-'  7  0  ~/templates/enable_interface_with_ip.j2
+|4,39,7,0,1687513330,"~/templates/enable_interface_with_ip.j2"
+-'  8  9  ~/templates/enable_interface_with_ip.j2
+|4,39,8,9,1687513317,"~/templates/enable_interface_with_ip.j2"
+-'  7  9  ~/templates/enable_interface_with_ip.j2
+|4,39,7,9,1687513299,"~/templates/enable_interface_with_ip.j2"
+-'  3  25  ~/templates/enable_interface_with_ip.j2
+|4,39,3,25,1687513294,"~/templates/enable_interface_with_ip.j2"
+-'  3  25  ~/templates/enable_interface_with_ip.j2
+|4,39,3,25,1687513294,"~/templates/enable_interface_with_ip.j2"
+-'  3  25  ~/templates/enable_interface_with_ip.j2
+|4,39,3,25,1687513269,"~/templates/enable_interface_with_ip.j2"
+-'  1  0  ~/templates/enable_interface_with_ip.j2
+|4,39,1,0,1687513258,"~/templates/enable_interface_with_ip.j2"
+-'  1  0  ~/templates/enable_interface_with_ip.j2
+|4,39,1,0,1687513258,"~/templates/enable_interface_with_ip.j2"
+-'  1  0  ~/templates/enable_interface_with_ip.j2
+|4,39,1,0,1687513258,"~/templates/enable_interface_with_ip.j2"
+-'  20  22  ~/00_enable_interfaces.yml
+|4,39,20,22,1687513092,"~/00_enable_interfaces.yml"
+-'  20  22  ~/00_enable_interfaces.yml
+|4,39,20,22,1687513092,"~/00_enable_interfaces.yml"
+-'  20  22  ~/00_enable_interfaces.yml
+|4,39,20,22,1687513092,"~/00_enable_interfaces.yml"
+-'  20  22  ~/00_enable_interfaces.yml
+|4,39,20,22,1687513092,"~/00_enable_interfaces.yml"
+-'  20  22  ~/00_enable_interfaces.yml
+|4,39,20,22,1687513092,"~/00_enable_interfaces.yml"
+-'  20  22  ~/00_enable_interfaces.yml
+|4,39,20,22,1687513092,"~/00_enable_interfaces.yml"
+-'  20  22  ~/00_enable_interfaces.yml
+|4,39,20,22,1687513092,"~/00_enable_interfaces.yml"
+-'  20  22  ~/00_enable_interfaces.yml
+|4,39,20,22,1687513092,"~/00_enable_interfaces.yml"
+-'  1  0  ~/00_enable_interfaces.yml
+|4,39,1,0,1687512982,"~/00_enable_interfaces.yml"
+-'  1  0  ~/00_enable_interfaces.yml
+|4,39,1,0,1687512982,"~/00_enable_interfaces.yml"
+-'  1  0  ~/00_enable_interfaces.yml
+|4,39,1,0,1687512982,"~/00_enable_interfaces.yml"
+-'  1  0  ~/00_enable_interfaces.yml
+|4,39,1,0,1687512982,"~/00_enable_interfaces.yml"
+-'  1  0  ~/00_enable_interfaces.yml
+|4,39,1,0,1687512982,"~/00_enable_interfaces.yml"
+-'  1  0  ~/00_enable_interfaces.yml
+|4,39,1,0,1687512982,"~/00_enable_interfaces.yml"
+-'  1  0  ~/00_enable_interfaces.yml
+|4,39,1,0,1687512982,"~/00_enable_interfaces.yml"
+-'  1  0  ~/00_enable_interfaces.yml
+|4,39,1,0,1687512982,"~/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  16  3  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,16,3,1687512369,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  33  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,33,1687512312,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512233,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  12  0  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,12,0,1687512231,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  51  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,51,1687512226,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  51  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,51,1687512226,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  51  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,51,1687512226,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  51  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,51,1687512226,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  51  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,51,1687512226,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  51  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,51,1687512226,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  51  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,51,1687512226,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  51  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,51,1687512226,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  51  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,51,1687512226,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  51  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,51,1687512226,"~/write_to_csv/00_enable_interfaces.yml"
+-'  13  51  ~/write_to_csv/00_enable_interfaces.yml
+|4,39,13,51,1687512226,"~/write_to_csv/00_enable_interfaces.yml"
 
 # History of marks within files (newest to oldest):
+
+> ~/templates/enable_interface_with_ip.j2
+	*	1687513329	0
+	"	7	0
+	^	3	26
+	.	7	0
+	+	3	25
+	+	7	0
+
+> ~/00_enable_interfaces.yml
+	*	1687513091	0
+	"	20	22
+	^	20	23
+	.	20	22
+	+	13	40
+	+	21	0
+	+	14	4
+	+	20	22
+
+> ~/write_to_csv/00_enable_interfaces.yml
+	*	1687512364	0
+	"	16	3
+	.	16	0
+	+	8	11
+	+	5	22
+	+	13	38
+	+	5	0
+	+	13	39
+	+	13	24
+	+	13	18
+	+	13	41
+	+	17	0
+	+	16	15
+	+	16	0
+
+> ~/write_to_csv/templates/enable_interface_with_ip.j2
+	*	1687511139	0
+	"	3	52
+	^	3	53
+	.	3	52
+	+	7	0
+	+	1	6
+	+	3	25
+	+	5	11
+	+	6	0
+	+	3	52
+
+> ~/write_to_csv/00
+	*	1687510937	0
+	"	1	0
 
 > ~/write_to_csv/templates/hostname_int_ip_to_csv.j2
 	*	1687505556	0
