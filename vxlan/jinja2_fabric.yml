@@ -1,0 +1,18 @@
+---
+ - hosts: jinja2_spine
+   connection: network_cli
+   gather_facts: false
+   vars:
+     - ansible_network_os: ios
+     
+   roles:
+   - jinja2_spine
+
+ - hosts: jinja2_leaf
+   connection: network_cli
+   gather_facts: false
+   vars:
+     - ansible_network_os: ios
+   
+   roles:
+   - jinja2_leaf

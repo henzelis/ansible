@@ -1,0 +1,35 @@
+---
+# Assign VLAN to server facing port
+  - hosts: leaf:jinja2_leaf
+
+    tasks:
+      - name: Provision VLAN
+        nxos_config:
+          lines: "vlan {{ item }}"
+        with_items:
+          - 140
+          - 141
+        tags: add vlans
+
+      - name: Configure Server Facing port to L2
+        nxos_interfaces:
+          config:
+          - name: Ethernet1/3
+            enabled: true
+            mode: layer2
+
+      - name: Configure VLAN for server port
+        when: ("205" in inventory_hostname) or ("139" in inventory_hostname)
+        nxos_l2_interfaces:
+          config:
+          - name: Ethernet1/3
+            access:
+              vlan: "140"
+     
+      - name: Configure VLAN for server port
+        when: ("182" in inventory_hostname)
+        nxos_l2_interfaces:
+          config:
+          - name: Ethernet1/3
+            access:
+              vlan: "141"

@@ -1,0 +1,13 @@
+---
+# tasks file for jinja2_spine
+
+  - name: Generate Spine Config
+    template:
+      src=spine.j2
+      dest=roles/jinja2_spine/files/{{inventory_hostname}}.cfg
+
+  - name: Push Spine Config
+    ios_config:
+      # config: "{{lookup('template', 'roles/jinja2_spine/files/{{inventory_hostname}}.cfg')}}"
+      src: roles/jinja2_spine/files/{{inventory_hostname}}.cfg
+

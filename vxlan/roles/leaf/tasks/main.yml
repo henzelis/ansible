@@ -1,0 +1,292 @@
+---
+# Configure hostname
+
+  - name: Configure hostname
+    nxos_config: 
+      lines: hostname {{ hostname }}
+    tags: hostname
+
+# tasks file for leaf
+  - name: Enable BGP
+    nxos_feature:
+      feature: bgp
+      state: enabled
+    tags: bgp
+
+  - name: Enable OSPF
+    nxos_feature:
+      feature: ospf
+      state: enabled
+    tags: ospf
+      
+  - name: Configure BGP AF
+    cisco.nxos.nxos_bgp_address_family:
+      config:
+        as_number: "{{ asn }}"
+        address_family:
+          - afi: ipv4
+            safi: unicast
+    tags: bgp
+ 
+  - name: Configure BGP AS and peers
+    cisco.nxos.nxos_bgp_global:
+      config:
+        as_number: "{{ asn }}"
+        router_id: "{{ router_id }}"
+        neighbors:
+          - neighbor_address: "{{ item.neighbor }}"
+            remote_as: "{{ item.remote_as }}"
+            update_source: "{{ item.update_source }}"
+    with_items: "{{ bgp_neighbors }}"
+  
+  - name: Configure iBGP neighbor AF
+    cisco.nxos.nxos_bgp_neighbor_address_family:
+      config:
+        as_number: "{{ asn }}"
+        neighbors: 
+          - neighbor_address: "{{ item.neighbor }}"
+            address_family:
+             - afi: ipv4
+               safi: unicast
+               send_community: 
+                 both: True 
+    with_items: "{{ bgp_neighbors }}"
+    tags: bgp
+  
+  - name: Create Loopback interfaces
+    nxos_interfaces:
+      config:
+        - name: "{{ item.interface }}"
+          description: "{{ item.interface }} interface"
+          enabled: True
+    with_items: "{{ loopbacks }}"
+    tags: ip
+  
+  - name: Configure IP Addresses on Loopbacks
+    nxos_l3_interfaces:
+      config:
+      - name: "{{ item.interface }}"
+        ipv4:
+        - address: "{{ item.addr }}/{{ item.mask }}"
+    with_items: "{{ loopbacks }}"
+    tags: ip
+
+  - name: Enable L3 physical interfaces
+    nxos_interfaces:
+      config:
+        - name: "{{ item.interface }}"
+          enabled: True
+          mtu: 9216
+          mode: layer3
+    with_items: "{{ l3_phy_interfaces }}"
+    tags: ip
+
+  - name: Configure IP Unnambered for L3 Interfaces
+    nxos_config:
+      lines:
+        - medium p2p
+        - ip unnumbered loopback 0
+      parents:
+        - "interface {{ item.interface  }}"
+    with_items: "{{ l3_phy_interfaces }}"
+    tags: ip
+
+  - name: Enable OSPF process
+    nxos_ospfv2:
+      config:
+        processes:
+          - process_id: 1
+    tags: ospf
+
+  - name: Enable OSPF on L3 interfaces
+    cisco.nxos.nxos_ospf_interfaces:
+      config:
+        - name: "{{ item.interface }}"
+          address_family:
+            - afi: ipv4
+              processes:
+              - process_id: 1
+                area:
+                  area_id: 0.0.0.0
+    with_items: "{{ l3_interfaces }}"
+    tags: ospf
+
+
+  - name: Enable PIM
+    nxos_feature:
+      feature: pim
+      state: enabled
+    tags: multicast
+
+  - name: Configure PIM on L3 interfaces
+    nxos_pim_interface:
+      interface: "{{ item.interface }}"
+      sparse: true
+    with_items: "{{ l3_interfaces }}"
+    tags: multicast
+
+  - name: Configure PIM RP
+    nxos_pim_rp_address:
+      rp_address: "{{ rp_address }}"
+    tags: multicast
+
+# Configure VXLAN
+  
+  - name: Enable VXLAN Feature
+    nxos_feature:
+      feature:  "{{ item }}"
+      state: enabled
+    with_items:
+      - nv overlay
+      - vn-segment-vlan-based
+    tags: vxlan
+
+  - name: Enable interface-vlan
+    nxos_feature:
+      feature:  "interface-vlan"
+      state: enabled
+    tags: vxlan
+  
+  - name: Enable NV Overlay
+    nxos_evpn_global:
+      nv_overlay_evpn: true
+    tags: vxlan
+    
+  - name: Configure VLAN to VNI mapping
+    nxos_vlans:
+      config:
+        - vlan_id: "{{ item.vlan_id }}"
+          mapped_vni: "{{ item.vni }}"
+          name: "{{ item.vlan_name }}"
+    with_items:
+      - "{{ L2VNI }}"
+      - "{{ L3VNI }}"
+    tags: vxlan
+
+  - name: Configure Tenant VRF
+    nxos_vrf:
+      vrf: Tenant-1
+      rd: auto
+      vni: "{{ L3VNI[0].vni }}"
+    tags: vxlan
+
+  - name: Configure VRF AF
+    nxos_vrf_af:
+      vrf: Tenant-1
+      route_target_both_auto_evpn: true
+      afi: ipv4
+    tags: vxlan
+
+  - name: Configure Anycast GW
+    nxos_overlay_global:
+      anycast_gateway_mac: 0000.2222.3333
+    tags: vxlan
+
+  - name: Configure L2VNI and L3VNI
+    nxos_interfaces:
+      config:
+      - name: vlan"{{ item.vlan_id }}"
+        enabled: True
+    with_items: 
+      - "{{ L2VNI }}"
+      - "{{ L3VNI }}"
+    tags: vxlan
+
+  - name: Assign interface to Tenant VRF
+    nxos_vrf_interface:
+      vrf: Tenant-1
+      interface: "vlan{{ item.vlan_id }}"
+    with_items:
+    - "{{ L2VNI }}"
+    - "{{ L3VNI }}"
+    tags: vxlan
+
+  - name: Configure SVI IP
+    nxos_l3_interfaces:
+      config:
+      - name: "vlan{{ item.vlan_id }}"
+        ipv4:
+        - address: "{{ item.ip_add }}/{{ item.mask }}"
+    with_items: "{{ L2VNI }}"
+    tags: vxlan
+
+  - name: Configure L2VNI SVI
+    nxos_interfaces:
+      config:
+      - name: "vlan{{ item.vlan_id }}"
+        fabric_forwarding_anycast_gateway: true
+    with_items: "{{ L2VNI }}"
+    tags: vxlan
+       
+  - name: Configure L3VNI SVI
+    nxos_interfaces:
+      config:
+      - name: "vlan{{ item.vlan_id }}"
+        ip_forward: true
+    with_items: "{{ L3VNI }}"
+    tags: vxlan
+
+  - name: Configure VTEP Tunnel
+    nxos_vxlan_vtep:
+      interface: nve1
+      shutdown: false
+      source_interface: loopback1
+      host_reachability: true
+    tags: vxlan
+
+  - name: Configure L2VNI to VTEP
+    nxos_vxlan_vtep_vni:
+      interface: nve1
+      vni: "{{ item.vni }}"
+      multicast_group: "{{ item.mcast }}"
+    with_items: "{{ L2VNI }}"
+    tags: vxlan
+
+  - name: Configure L3VNI to VTEP
+    nxos_vxlan_vtep_vni:
+      interface: nve1
+      vni: "{{ item.vni }}"
+      assoc_vrf: true
+    with_items: "{{ L3VNI }}"
+    tags: vxlan
+
+# Configure BGP EVPN
+
+  - name: Configure BGP EVPN AF
+    cisco.nxos.nxos_bgp_address_family:
+      config:
+        as_number: "{{ asn }}"
+        address_family:
+          - afi: l2vpn
+            safi: evpn
+    tags: evpn
+
+
+  - name: Configure iBGP neighbor EVPN AF
+    cisco.nxos.nxos_bgp_neighbor_address_family:
+      config:
+        as_number: "{{ asn }}"
+        neighbors: 
+          - neighbor_address: "{{ item.neighbor }}"
+            address_family:
+             - afi: l2vpn
+               safi: evpn
+               send_community: 
+                 both: True 
+    with_items: "{{ bgp_neighbors }}"
+    tags: evpn
+
+  - name: Configure L2VNI RD/RT
+    nxos_evpn_vni:
+      vni: "{{ item.vni }}"
+      route_distinguisher: auto
+      route_target_both: auto
+    with_items: "{{ L2VNI }}"
+    tags: evpn
+
+# Save configureation
+
+  - name: SAVE CONFIGURATION
+    nxos_config:
+      save_when: always
+    tags: save

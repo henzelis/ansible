@@ -1,0 +1,7 @@
+---
+  hostname: spine_2
+  router_id: 192.168.0.7
+
+  loopbacks:
+    - { interface: loopback0, addr: 192.168.0.7, mask: 32 }
+    - { interface: loopback1, addr: 192.168.0.100, mask: 32 }

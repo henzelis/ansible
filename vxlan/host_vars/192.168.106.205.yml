@@ -1,0 +1,8 @@
+---
+  hostname: leaf_3
+  router_id: 192.168.0.10
+
+  loopbacks:
+    - { interface: loopback0, addr: 192.168.0.10, mask: 32 }
+    - { interface: loopback1, addr: 192.168.0.110, mask: 32 }
+

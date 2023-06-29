@@ -1,0 +1,11 @@
+---
+
+ - hosts: spine
+   connection: network_cli
+   roles:
+     - spine
+
+ - hosts: leaf
+   connection: network_cli
+   roles:
+     - leaf
