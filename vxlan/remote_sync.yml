@@ -1,0 +1,15 @@
+---
+  
+  - hosts: spine,leaf,jinja2_leaf,jinja2_spine
+    
+    tasks:
+      - name: Save Configurations
+        nxos_config:
+          save_when: always     
+      
+      - name: Backup Configuration
+        nxos_config:
+          backup: true
+          backup_options:
+            filename: "{{hostname}}.cfg"
+            dir_path: /home/ansible/vxlan/cfg

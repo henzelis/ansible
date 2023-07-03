@@ -1,0 +1,37 @@
+{
+    "changed": false,
+    "failed": false,
+    "stdout": [
+        "OSPF Process ID 1 VRF default\n Total number of neighbors: 2\n Neighbor ID     Pri State            Up Time  Address         Interface\n 192.168.0.6       1 FULL/ -          00:28:08 192.168.0.6     Eth1/1 \n 192.168.0.7       1 FULL/ -          00:27:46 192.168.0.7     Eth1/2",
+        "BGP summary information for VRF default, address family IPv4 Unicast\nBGP router identifier 192.168.0.11, local AS number 65000\nBGP table version is 4, IPv4 Unicast config peers 2, capable peers 2\n0 network entries and 0 paths using 0 bytes of memory\nBGP attribute entries [0/0], BGP AS path entries [0/0]\nBGP community entries [0/0], BGP clusterlist entries [4/16]\n\nNeighbor        V    AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd\n192.168.0.6     4 65000      55      41        4    0    0 00:27:38 0         \n192.168.0.7     4 65000      55      41        4    0    0 00:27:53 0",
+        "PIM Neighbor Status for VRF \"default\"\nNeighbor        Interface            Uptime    Expires   DR       Bidir-  BFD    ECMP Redirect\n                                                         Priority Capable State     Capable\n192.168.0.6     Ethernet1/1          00:28:43  00:01:39  1        yes     n/a     no\n192.168.0.7     Ethernet1/2          00:28:30  00:01:43  1        yes     n/a     no"
+    ],
+    "stdout_lines": [
+        [
+            "OSPF Process ID 1 VRF default",
+            " Total number of neighbors: 2",
+            " Neighbor ID     Pri State            Up Time  Address         Interface",
+            " 192.168.0.6       1 FULL/ -          00:28:08 192.168.0.6     Eth1/1 ",
+            " 192.168.0.7       1 FULL/ -          00:27:46 192.168.0.7     Eth1/2"
+        ],
+        [
+            "BGP summary information for VRF default, address family IPv4 Unicast",
+            "BGP router identifier 192.168.0.11, local AS number 65000",
+            "BGP table version is 4, IPv4 Unicast config peers 2, capable peers 2",
+            "0 network entries and 0 paths using 0 bytes of memory",
+            "BGP attribute entries [0/0], BGP AS path entries [0/0]",
+            "BGP community entries [0/0], BGP clusterlist entries [4/16]",
+            "",
+            "Neighbor        V    AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd",
+            "192.168.0.6     4 65000      55      41        4    0    0 00:27:38 0         ",
+            "192.168.0.7     4 65000      55      41        4    0    0 00:27:53 0"
+        ],
+        [
+            "PIM Neighbor Status for VRF \"default\"",
+            "Neighbor        Interface            Uptime    Expires   DR       Bidir-  BFD    ECMP Redirect",
+            "                                                         Priority Capable State     Capable",
+            "192.168.0.6     Ethernet1/1          00:28:43  00:01:39  1        yes     n/a     no",
+            "192.168.0.7     Ethernet1/2          00:28:30  00:01:43  1        yes     n/a     no"
+        ]
+    ]
+}

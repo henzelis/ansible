@@ -1,0 +1,5 @@
+---
+ - hosts: leaf,jinja2_leaf
+   
+   roles:
+     - vni_provision

@@ -1,0 +1,7 @@
+---
+ - hosts: leaf,jinja2_leaf,spine,jinja2_spine
+   
+   tasks:
+    - name: Change passwords
+      nxos_config:
+        lines: "username admin password admin"
