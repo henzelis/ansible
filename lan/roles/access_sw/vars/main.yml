@@ -1,0 +1,27 @@
+---
+# vars file for access_sw
+  lag:
+    - {name: Port-channel10, interface: Eth0/0}
+    - {name: Port-channel10, interface: Eth0/1} 
+    
+  trunks:
+    - {interface: Port-channel10, allowed_vlans: "10,20,30", native_vlan: 1}
+
+  access:
+    - interface: Eth0/2
+    - interface: Eth0/3
+    - interface: Eth1/1
+    - interface: Eth1/2
+    - interface: Eth1/3
+
+  vlans:
+    - { name: FINANCE_VL10, vlan: 10}
+    - { name: IT_VL20, vlan: 20}
+    - { name: PROD_VL30, vlan: 30}
+    - { name: UNUSED, vlan: 999}
+
+  vlan_assign:
+    - { interface: Eth0/2, vlan: 10 }
+    - { interface: Eth0/3, vlan: 20 }
+    - { interface: Eth1/1, vlan: 30 }
+    - { interface: Eth1/2, vlan: 999 }

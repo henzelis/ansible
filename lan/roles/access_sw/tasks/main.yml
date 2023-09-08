@@ -1,0 +1,81 @@
+---
+# tasks file for access_sw
+ 
+  - name: Configure hostnames
+    cisco.ios.ios_hostname:
+      config:
+        hostname: "{{ inventory_hostname }}"
+      state: overridden
+    tags: hostname  
+
+
+        #  - name: Gather listed hostname config
+        #    cisco.ios.ios_hostname:
+        #      state: gathered
+
+  - name: Configure VLANS
+    cisco.ios.ios_vlans:
+      config:
+        - name: "{{ item.name  }}"
+          vlan_id: "{{ item.vlan }}"
+          state: active
+          shutdown: disabled
+      state: merged
+    with_items: "{{ vlans  }}"
+    tags: vlans
+
+
+  - name: Configure access ports
+    cisco.ios.ios_l2_interfaces:
+      config:
+        - name: "{{ item.interface }}"
+          mode: access
+          access:
+            vlan: "{{ item.vlan }}"
+      state: merged
+    with_items: "{{ vlan_assign }}"
+    tags: vlans
+
+  - name: Enable L2 interfaces
+    cisco.ios.ios_interfaces:
+      config:
+        - name: "{{ item.interface }}"
+          enabled: true
+      state: merged
+    with_items: "{{ vlan_assign }}"
+    tags: l2_intf
+
+  - name: Create LAG ports
+    cisco.ios.ios_lag_interfaces:
+      config:
+        - name: "{{ item.name }}"
+          members:
+            - member: "{{ item.interface }}"
+              mode: active
+      state: merged
+    with_items: "{{ lag }}"
+    tags: lag
+  
+  - name: Configure trunk ports
+    cisco.ios.ios_l2_interfaces:
+      config:
+        - name: "{{ item.interface }}"
+          trunk:
+            allowed_vlans: "{{ item.allowed_vlans }}"
+            encapsulation: dot1q
+            native_vlan: "{{ item.native_vlan }}"
+      state: merged
+    with_items: "{{ trunks }}"
+    tags: trunk
+
+
+  - name: Configure mode trunk for ports
+    cisco.ios.ios_l2_interfaces:
+      config:
+        - name: "{{ item.interface }}"
+          mode: trunk
+      state: merged
+    with_items: "{{ trunks }}"
+    tags: trunk
+
+ 

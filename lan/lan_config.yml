@@ -1,0 +1,12 @@
+---
+
+ - hosts: access_sw
+   connection: network_cli
+   roles:
+     - access_sw
+
+
+ - hosts: core_sw
+   connection: network_cli
+   roles:
+     - core_sw

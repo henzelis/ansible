@@ -1,0 +1,12 @@
+---
+
+ansible_connection: network_cli
+ansible_network_os: ios
+ansible_user: "{{vault_ansible_user}}"
+ansible_password: "{{vault_ansible_password}}"
+ansible_second_password: "{{vault_second_password}}"
+ansible_become: yes
+ansible_become_method: enable
+ansible_become_pass: "{{vault_become_pass}}"
+
+ntp_config: ntp server 194.8.146.38
